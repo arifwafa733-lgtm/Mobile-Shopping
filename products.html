@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Shopping | Products</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eef1f8;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #172554, #6d28d9);
+            color: white;
+            padding: 28px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            margin-bottom: 8px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            color: #172554;
+            margin-bottom: 25px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 9px;
+            color: #334155;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .form-group input:focus {
+            border-color: #6d28d9;
+            box-shadow: 0 0 0 3px rgba(109,40,217,0.1);
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 12px;
+        }
+
+        button {
+            padding: 13px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .save {
+            background: #6d28d9;
+            color: white;
+        }
+
+        .save:hover {
+            background: #4c1d95;
+        }
+
+        .reset {
+            background: #e2e8f0;
+            color: #334155;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 22px;
+            color: #6d28d9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media(max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>📱 Mobile Shopping</h1>
+        <p>Product Management System</p>
+    </div>
+
+    <div class="card">
+
+        <h2>➕ Add New Product</h2>
+
+        <form method="POST" action="/products">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Product ID</label>
+                    <input type="number" name="product_id" required>
+                </div>
+
+                <div class="form-group">
+                    <label>User ID</label>
+                    <input type="number" name="user_id" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" name="product_name"
+                           maxlength="150" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Color</label>
+                    <input type="text" name="color" maxlength="50">
+                </div>
+
+                <div class="form-group">
+                    <label>Model</label>
+                    <input type="text" name="model" maxlength="100">
+                </div>
+
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" name="price"
+                           step="0.01" min="0" required>
+                </div>
+
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="save">
+                    Save Product
+                </button>
+
+                <button type="reset" class="reset">
+                    Clear
+                </button>
+            </div>
+
+        </form>
+
+        <a href="/dashboard" class="back">← Back to Dashboard</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
